@@ -1,0 +1,18 @@
+<div class="top-nav">
+  <a routerLink="/" class="btn-home">🏠 Accueil</a>
+</div>
+
+<header class="header-row">
+  <a [routerLink]="prevLink" class="nav-btn prev">
+    <span>←</span> {{ prevLabel }}
+  </a>
+
+  <div class="title-group">
+    <h1>{{ title }}</h1>
+    <p class="subtitle">{{ subtitle }}</p>
+  </div>
+
+  <a [routerLink]="nextLink" class="nav-btn next">
+    {{ nextLabel }} <span>→</span>
+  </a>
+</header>

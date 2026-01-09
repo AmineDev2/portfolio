@@ -1,61 +1,13 @@
-/* --- Mise en page globale (Base commune) --- */
+/* =========================================
+   1. BASE & STRUCTURE GLOBALE
+   ========================================= */
+
 .page-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 20px 20px 60px 20px;
+  padding: 20px 20px 80px 20px; /* Un peu plus de padding en bas */
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #334155;
-}
-
-/* --- Header & Bouton --- */
-.header-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  margin-bottom: 20px;
-
-  .title-group {
-    flex: 1;
-    h1 {
-      font-size: 1.8rem;
-      color: #2c3e50;
-      margin: 0 0 5px 0;
-      line-height: 1.2;
-    }
-    .subtitle {
-      font-size: 1.1rem;
-      color: #64748b;
-      margin: 0;
-      font-weight: 400;
-    }
-  }
-}
-
-.btn-back {
-  text-decoration: none;
-  background: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  color: #555;
-  font-weight: 600;
-  transition: all 0.2s;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  border: 1px solid #f1f5f9;
-
-  .icon {
-    font-size: 1.2em;
-    line-height: 1;
-    padding-bottom: 2px;
-  }
-  &:hover {
-    transform: translateX(-3px);
-    color: #007bff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
 }
 
 .divider {
@@ -64,6 +16,7 @@
   background: #e2e8f0;
   margin-bottom: 40px;
 }
+
 .divider-light {
   border: 0;
   height: 1px;
@@ -71,30 +24,12 @@
   margin: 40px 0;
 }
 
-/* --- Layout Contenu --- */
-.content-block {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  margin-bottom: 4rem;
-  align-items: center;
+/* =========================================
+   2. TYPOGRAPHIE
+   ========================================= */
 
-  @media (min-width: 850px) {
-    grid-template-columns: 1.2fr 1fr;
-    &.reverse-layout {
-      .text-column {
-        order: 2;
-      }
-      .image-column {
-        order: 1;
-      }
-    }
-  }
-}
-
-/* --- Typographie --- */
 .section-title {
-  color: #1e3a8a;
+  color: #1e3a8a; /* Bleu foncé */
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -111,17 +46,69 @@
     border-radius: 2px;
   }
 }
+
 p {
   line-height: 1.6;
   margin-bottom: 1rem;
   font-size: 1rem;
 }
+
 .sub-text {
   font-size: 0.95rem;
   color: #475569;
 }
 
-/* --- Cartes Graphiques --- */
+/* =========================================
+   3. LAYOUT & GRILLES
+   ========================================= */
+
+/* --- Layout Standard (Grid 2 colonnes) --- */
+.content-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: center;
+
+  @media (min-width: 850px) {
+    grid-template-columns: 1.2fr 1fr;
+
+    &.reverse-layout {
+      .text-column {
+        order: 2;
+      }
+      .image-column {
+        order: 1;
+      }
+    }
+  }
+}
+
+/* --- Layout Spécifique Section 4.2 (Empilement Vertical) --- */
+/* C'est ce bloc qui permet de mettre la liste en dessous du reste */
+.content-block.vertical-stack {
+  display: block; /* On annule le grid standard */
+  margin-bottom: 5rem;
+}
+
+/* Le conteneur du haut (Texte + Graphique) */
+.top-row-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem; /* Espace avant la liste déroulante */
+
+  @media (min-width: 850px) {
+    grid-template-columns: 1.2fr 1fr; /* Texte à gauche, Graphique à droite */
+  }
+}
+
+/* =========================================
+   4. COMPOSANTS VISUELS
+   ========================================= */
+
+/* --- Cartes Graphiques (Cadres images) --- */
 .chart-card {
   background: white;
   padding: 15px;
@@ -142,6 +129,7 @@ p {
     max-height: 300px;
     object-fit: contain;
   }
+
   .caption {
     display: block;
     margin-top: 10px;
@@ -151,7 +139,7 @@ p {
   }
 }
 
-/* --- Boites d'Analyse --- */
+/* --- Boites d'Analyse (Couleurs) --- */
 .analysis-card {
   padding: 15px 20px;
   border-radius: 8px;
@@ -184,17 +172,13 @@ p {
   }
 }
 
-/* --- Boite Action & Bannière Logos --- */
+/* --- Boite Action (Verte avec logos) --- */
 .action-card {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   background: #f0fdf4;
   border: 1px solid #bbf7d0;
   border-radius: 10px;
   overflow: hidden;
-
-  &.mt-6 {
-    margin-top: 2rem;
-  }
 
   .card-header {
     background: #dcfce7;
@@ -218,19 +202,21 @@ p {
       width: 100%;
       height: auto;
       border-radius: 6px;
-      mix-blend-mode: multiply; /* Astuce pour fondre le blanc de l'image si besoin */
+      mix-blend-mode: multiply;
     }
   }
 }
 
-/* --- Style spécifique Facture (Document) --- */
+/* --- Carte Document (Facture qui tourne) --- */
 .document-card {
   background: white;
   padding: 10px;
   border: 1px solid #cbd5e1;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); /* Effet ombre portée papier */
-  transform: rotate(1deg); /* Léger style "posé sur la table" */
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+  transform: rotate(1deg);
   transition: transform 0.3s;
+  max-width: 300px; /* Limite la largeur */
+  margin: 0 auto;
 
   &:hover {
     transform: rotate(0deg) scale(1.02);
@@ -252,19 +238,105 @@ p {
   }
 }
 
-/* --- Footer Déco --- */
-.footer-deco {
-  margin-top: 4rem;
-  display: flex;
-  justify-content: center;
-  border-top: 1px dashed #cbd5e1;
-  padding-top: 2rem;
+/* =========================================
+   5. LISTE DÉROULANTE (ACCORDÉON)
+   ========================================= */
 
-  .deco-img {
-    height: 60px;
-    opacity: 0.8;
+.documents-list-section {
+  background-color: white;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 2rem;
+  max-width: 800px; /* Largeur contenue pour l'esthétique */
+  margin: 0 auto; /* Centrage horizontal */
+
+  h4 {
+    font-size: 1.1rem;
+    color: #334155;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
   }
 }
+
+.doc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.doc-item {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8fafc;
+  transition: all 0.2s ease;
+
+  /* État Ouvert */
+  &.is-open {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    background-color: white;
+
+    .doc-header {
+      background-color: #eff6ff; /* Fond bleu clair titre */
+      color: #1d4ed8;
+      font-weight: 700;
+    }
+  }
+}
+
+.doc-header {
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: #e2e8f0;
+  }
+
+  .icon-folder {
+    margin-right: 12px;
+    font-size: 1.2rem;
+  }
+  .doc-title {
+    flex: 1;
+    font-size: 0.95rem;
+  }
+  .arrow {
+    color: #64748b;
+    font-size: 0.8rem;
+  }
+}
+
+.doc-content {
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+  animation: slideDown 0.3s ease-out;
+
+  img {
+    max-width: 100%;
+    max-height: 500px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f1f5f9;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* --- Navigation Globale (Accueil) --- */
 .top-nav {
   margin-bottom: 10px;

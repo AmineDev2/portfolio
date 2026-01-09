@@ -16,8 +16,6 @@
     <a routerLink="/profils" class="nav-btn next"> Suivant <span>→</span> </a>
   </header>
 
-  <hr class="divider" />
-
   <section class="content-block">
     <div class="text-column">
       <h3 class="section-title">4.1 Types de produits perçus au self</h3>
@@ -51,40 +49,64 @@
     </div>
   </section>
 
-  <section class="content-block reverse-layout">
-    <div class="text-column">
-      <h3 class="section-title">4.2 Labels consommés</h3>
-      <p>
-        Le label <strong>Bio (25%)</strong> ressort comme le plus consommé,
-        suivi de l'AOP (20%) et du Label Rouge (18%).
-      </p>
-      <p class="sub-text">
-        Cependant, la part d'incertitude grimpe à
-        <strong>22% ("Je ne sais pas")</strong>. Cela montre que
-        l'identification des labels reste inégale : des produits de qualité sont
-        consommés sans être reconnus comme tels.
-      </p>
-
-      <div class="analysis-card orange">
-        <strong>⚠️ Levier prioritaire :</strong>
+  <section class="content-block vertical-stack">
+    <div class="top-row-container">
+      <div class="text-column">
+        <h3 class="section-title">4.2 Labels consommés & Lisibilité</h3>
         <p>
-          Améliorer la lisibilité (affichage simple, vocabulaire accessible)
-          pour relier les choix d'achat aux repères visuels des élèves.
+          Le label <strong>Bio (25%)</strong> ressort comme le plus consommé,
+          suivi de l'AOP (20%) et du Label Rouge (18%).
         </p>
+        <p class="sub-text">
+          Cependant, la part d'incertitude grimpe à
+          <strong>22% ("Je ne sais pas")</strong>. Cela montre que
+          l'identification des labels reste inégale : des produits de qualité
+          sont consommés sans être reconnus comme tels.
+        </p>
+
+        <div class="analysis-card orange">
+          <strong>⚠️ Levier prioritaire :</strong>
+          <p>
+            Améliorer la lisibilité pour relier les choix d'achat aux repères
+            visuels des élèves. Ci-dessous, les exemples de supports d'affichage
+            (SIQO) déjà déployés dans l'établissement.
+          </p>
+        </div>
+      </div>
+
+      <div class="image-column">
+        <div class="chart-card">
+          <img
+            src="assets/graphique-labels-consommes.png"
+            alt="Graphique 6 : Labels consommés"
+          />
+          <span class="caption">Graphique 6 — Labels consommés</span>
+        </div>
       </div>
     </div>
 
-    <div class="image-column">
-      <div class="chart-card">
-        <img
-          src="assets/graphique-labels-consommes.png"
-          alt="Graphique 6 : Labels consommés"
-        />
-        <span class="caption">Graphique 6 — Labels consommés</span>
+    <div class="documents-list-section">
+      <h4>📂 Supports d'affichage identifiés (Cliquez pour voir) :</h4>
+
+      <div class="doc-list">
+        <div
+          class="doc-item"
+          *ngFor="let doc of documents"
+          [class.is-open]="doc.ouvert"
+        >
+          <div class="doc-header" (click)="toggleDoc(doc)">
+            <span class="icon-folder">📄</span>
+            <span class="doc-title">{{ doc.nom }}</span>
+            <span class="arrow">{{ doc.ouvert ? "▲" : "▼" }}</span>
+          </div>
+
+          <div class="doc-content" *ngIf="doc.ouvert">
+            <img [src]="doc.src" [alt]="doc.nom" />
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
   <section class="content-block">
     <div class="text-column">
       <h3 class="section-title">4.3 Labels préférés & Pistes d'action</h3>

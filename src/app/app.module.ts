@@ -13,6 +13,7 @@ import { InterpretationComponent } from './interpretation/interpretation.compone
 import { SyntheseComponent } from './synthese/synthese.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterGenericComponent } from 'src/shared/footer-generic/footer-generic.component';
+import { HeaderGenericComponent } from 'src/shared/header-generic/header-generic.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FooterGenericComponent } from 'src/shared/footer-generic/footer-generic
     SyntheseComponent,
     HeaderComponent,
     FooterGenericComponent,
+    HeaderGenericComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
