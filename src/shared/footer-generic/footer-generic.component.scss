@@ -1,0 +1,15 @@
+.footer-deco {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  border-top: 1px dashed #cbd5e1;
+  padding-top: 2rem;
+  padding-bottom: 2rem; /* Un peu de marge en bas */
+
+  .deco-img {
+    height: 60px;
+    opacity: 0.8;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}

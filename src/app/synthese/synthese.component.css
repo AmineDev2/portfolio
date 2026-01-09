@@ -1,0 +1,230 @@
+/* --- Base Page --- */
+.page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 20px 60px 20px;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #334155;
+}
+
+/* --- Header & Bouton --- */
+.header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+  .title-group {
+    flex: 1;
+    h1 {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin: 0 0 5px 0;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #64748b;
+      margin: 0;
+    }
+  }
+}
+.btn-back {
+  text-decoration: none;
+  background: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #555;
+  font-weight: 600;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  &:hover {
+    transform: translateX(-3px);
+    color: #007bff;
+  }
+}
+.divider {
+  border: 0;
+  height: 1px;
+  background: #e2e8f0;
+  margin-bottom: 40px;
+}
+
+/* --- Carte Synthèse (Style "Dark Mode" Élégant) --- */
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.synthesis-card {
+  background-color: #1e293b; /* Bleu Nuit très foncé */
+  color: white;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  max-width: 800px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid #334155;
+  position: relative;
+  overflow: hidden;
+
+  /* Petite déco bordure gauche */
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(to bottom, #3b82f6, #60a5fa);
+  }
+}
+
+.card-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.key-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.point-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 2.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .bullet-col {
+    flex-shrink: 0;
+    .icon-circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(59, 130, 246, 0.2); /* Bleu transparent */
+      color: #60a5fa; /* Bleu clair */
+      border: 2px solid #3b82f6;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  }
+
+  .text-col {
+    h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.25rem;
+      color: #93c5fd; /* Bleu pastel */
+    }
+    p {
+      margin: 0;
+      line-height: 1.6;
+      color: #cbd5e1; /* Gris clair */
+      font-size: 1.05rem;
+    }
+    strong {
+      color: white;
+      font-weight: 600;
+    }
+  }
+}
+
+.footer-deco {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  opacity: 0.6;
+  img {
+    height: 50px;
+  }
+}
+
+/* --- Navigation Globale (Accueil) --- */
+.top-nav {
+  margin-bottom: 10px;
+}
+
+.btn-home {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #2563eb;
+  }
+}
+
+/* --- Header Centré avec Navigation --- */
+.header-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px; /* 3 colonnes : Gauche / Centre / Droite */
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1.5rem;
+
+  /* Le Groupe Titre (au centre) */
+  .title-group {
+    text-align: center;
+
+    h1 {
+      font-size: 1.6rem; /* Légèrement réduit pour l'équilibre */
+      color: #2c3e50;
+      margin: 0 0 5px 0;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #64748b;
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+
+  /* Les Boutons Précédent / Suivant */
+  .nav-btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    color: #334155;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: #e0f2fe; /* Bleu très pâle */
+      color: #0284c7;
+      border-color: #bae6fd;
+      transform: translateY(-1px);
+    }
+
+    /* Pour aligner le bouton Suivant à droite de sa case */
+    &.next {
+      margin-left: auto;
+    }
+  }
+}
