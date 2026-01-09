@@ -1,18 +1,13 @@
 <section class="page-container">
-  <div class="top-nav">
-    <a routerLink="/" class="btn-home">🏠 Accueil</a>
-  </div>
-
-  <header class="header-row">
-    <a routerLink="/" class="nav-btn prev"> <span>←</span> Accueil </a>
-
-    <div class="title-group">
-      <h1>1. Repères Méthodologiques</h1>
-      <p class="subtitle">Cadre institutionnel et scientifique</p>
-    </div>
-
-    <a routerLink="/le-self" class="nav-btn next"> Suivant <span>→</span> </a>
-  </header>
+  <app-header-generic
+    title="Méthodologie"
+    subtitle="Repères et échantillon (146 élèves)"
+    prevLink="/home"
+    prevLabel="Accueil"
+    nextLink="/le-self"
+    nextLabel="Le Self"
+  >
+  </app-header-generic>
   <div class="stats-banner">
     <div class="stat-box">
       <span class="stat-number">146</span>

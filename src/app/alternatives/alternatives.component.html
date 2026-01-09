@@ -1,18 +1,13 @@
 <div class="page-container">
-  <div class="top-nav">
-    <a routerLink="/" class="btn-home">🏠 Accueil</a>
-  </div>
-
-  <header class="header-row">
-    <a routerLink="/le-self" class="nav-btn prev"> <span>←</span> Précédent </a>
-
-    <div class="title-group">
-      <h1>3. Les alternatives au self</h1>
-      <p class="subtitle">Lieux et modes de repas hors cantine</p>
-    </div>
-
-    <a routerLink="/qualite" class="nav-btn next"> Suivant <span>→</span> </a>
-  </header>
+  <app-header-generic
+    title="Alternatives"
+    subtitle="Où et comment se fait le repas ?"
+    prevLink="/le-self"
+    prevLabel="Le Self"
+    nextLink="/qualite"
+    nextLabel="Qualité & Labels"
+  >
+  </app-header-generic>
 
   <hr class="divider" />
 

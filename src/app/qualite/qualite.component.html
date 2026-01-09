@@ -1,20 +1,13 @@
 <div class="page-container">
-  <div class="top-nav">
-    <a routerLink="/" class="btn-home">🏠 Accueil</a>
-  </div>
-
-  <header class="header-row">
-    <a routerLink="/alternatives" class="nav-btn prev">
-      <span>←</span> Précédent
-    </a>
-
-    <div class="title-group">
-      <h1>4. Repères de qualité</h1>
-      <p class="subtitle">Produits, labels et perceptions</p>
-    </div>
-
-    <a routerLink="/profils" class="nav-btn next"> Suivant <span>→</span> </a>
-  </header>
+  <app-header-generic
+    title="Qualité & Labels"
+    subtitle="Produits perçus et labels préférés"
+    prevLink="/alternatives"
+    prevLabel="Alternatives"
+    nextLink="/profils"
+    nextLabel="Profils"
+  >
+  </app-header-generic>
 
   <section class="content-block">
     <div class="text-column">

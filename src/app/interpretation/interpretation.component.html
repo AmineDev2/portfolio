@@ -1,18 +1,13 @@
 <div class="page-container">
-  <div class="top-nav">
-    <a routerLink="/" class="btn-home">🏠 Accueil</a>
-  </div>
-
-  <header class="header-row">
-    <a routerLink="/profils" class="nav-btn prev"> <span>←</span> Précédent </a>
-
-    <div class="title-group">
-      <h1>6. Modèles d'interprétation</h1>
-      <p class="subtitle">Cadres d'analyse de la transition</p>
-    </div>
-
-    <a routerLink="/synthese" class="nav-btn next"> Suivant <span>→</span> </a>
-  </header>
+  <app-header-generic
+    title="Interprétation"
+    subtitle="Trois modèles pour la transition"
+    prevLink="/profils"
+    prevLabel="Profils"
+    nextLink="/synthese"
+    nextLabel="Synthèse"
+  >
+  </app-header-generic>
 
   <p class="intro-text">
     À partir des tendances observées, voici trois manières de concevoir la

@@ -1,20 +1,13 @@
 <div class="page-container">
-  <div class="top-nav">
-    <a routerLink="/" class="btn-home">🏠 Accueil</a>
-  </div>
-
-  <header class="header-row">
-    <a routerLink="/interpretation" class="nav-btn prev">
-      <span>←</span> Précédent
-    </a>
-
-    <div class="title-group">
-      <h1>7. Synthèse et Actions</h1>
-      <p class="subtitle">Résumé des leviers prioritaires</p>
-    </div>
-
-    <a routerLink="/" class="nav-btn next"> Terminer <span>✓</span> </a>
-  </header>
+  <app-header-generic
+    title="Synthèse"
+    subtitle="Pistes d'action pour l'établissement"
+    prevLink="/interpretation"
+    prevLabel="Interprétation"
+    nextLink="/home"
+    nextLabel="Retour à l'accueil"
+  >
+  </app-header-generic>
 
   <div class="content-wrapper">
     <div class="synthesis-card">
