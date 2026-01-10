@@ -95,11 +95,16 @@
 
           <div class="doc-content" *ngIf="doc.ouvert">
             <img [src]="doc.src" [alt]="doc.nom" />
+
+            <div class="doc-source-container">
+              <span class="doc-source">{{ doc.source }}</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
   <section class="content-block">
     <div class="text-column">
       <h3 class="section-title">4.3 Labels préférés & Pistes d'action</h3>
@@ -120,7 +125,7 @@
         </p>
       </div>
 
-      <div class="action-card mt-6">
+      <div class="action-card">
         <div class="card-header">
           <span class="icon">🏷️</span> Piste d'action
         </div>
@@ -167,10 +172,9 @@
         <strong>✅ Usage pédagogique :</strong>
         <p>
           Ce type de document ne doit pas rester dans les bureaux. Il peut être
-          mobilisé en
-          <strong>communication interne</strong> pour rendre visibles les
-          engagements concrets et réduire la part du "Je ne sais pas" observée
-          dans le sondage.
+          mobilisé en <strong>communication interne</strong> pour rendre
+          visibles les engagements concrets et réduire la part du "Je ne sais
+          pas" observée dans le sondage.
         </p>
       </div>
     </div>
@@ -187,4 +191,6 @@
       </div>
     </div>
   </section>
+
+  <app-footer-generic></app-footer-generic>
 </div>
