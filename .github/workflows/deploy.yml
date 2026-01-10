@@ -31,14 +31,13 @@ jobs:
         run: npm ci
 
       - name: Build Angular App
-        # Important : on définit la base-href pour que les liens fonctionnent
-        run: npm run build -- --configuration=production --base-href=/portfolio/
+        # CORRECTION ICI : On met "/" car tu as ton propre domaine
+        run: npm run build -- --configuration=production --base-href=/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # ATTENTION : Angular crée un dossier avec le nom du projet dans "dist"
-          # Si votre projet ne s'appelle pas exactement "portfolio" dans angular.json, modifiez la ligne ci-dessous
+          # On garde dist/portfolio car c'est le dossier créé par Angular
           path: dist/portfolio
 
   deploy:
