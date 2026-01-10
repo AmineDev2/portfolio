@@ -28,7 +28,7 @@ export class QualiteComponent {
       ouvert: false,
     },
     {
-      nom: 'Affiche : Lutte contre le gaspillage (Faim)',
+      nom: 'Affiche : Lutte contre le gaspillage',
       src: 'assets/affiche-faim-gaspillage.png',
       ouvert: false,
     },
